@@ -5,6 +5,7 @@
 }
 
 .flex-container > div {
+
   background-color: #f1f1f1;
   width: 400px;
   margin: 50px;
@@ -14,7 +15,17 @@
   border: brown;
   border-width: 30px;
 }
+h1 {
+  text-align: center;
+  color:orange;
+  font-size: 300ps;
+  font-family: serif ;
+}
+p img {
+  border-radius: 50%;
+}
 
 body {
-  background-image: url(https://tse1.mm.bing.net/th?id=OIP.FecOd65FzMSpsjXxEIOKBwHaE8&pid=Api&P=0&w=251&h=168);
+  background:brown;
+  
 }
