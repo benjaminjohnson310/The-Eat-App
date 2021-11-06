@@ -5,7 +5,6 @@
 }
 
 .flex-container > div {
-
   background-color: #f1f1f1;
   width: 400px;
   margin: 50px;
@@ -17,15 +16,28 @@
 }
 h1 {
   text-align: center;
-  color:orange;
+  color: orange;
   font-size: 300ps;
-  font-family: serif ;
+  font-family: serif;
 }
 p img {
   border-radius: 50%;
 }
 
 body {
-  background:brown;
+  background: brown;
+}
+
+/* body {color: cornsilk;
   
+  } */
+
+p img {
+  border-radius: 100%;
+}
+h2 {
+  text-align: center;
+  color: orange;
+  font-size: 300ps;
+  font-family: serif;
 }
