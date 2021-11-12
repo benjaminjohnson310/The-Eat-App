@@ -1,4 +1,4 @@
-let menu = [];
+let Menu = [];
 
 function MenuItem(id, name, price, description, category) {
   this.id = id;
@@ -6,7 +6,7 @@ function MenuItem(id, name, price, description, category) {
   this.price = price;
   this.description = description;
   this.category = category;
-  menu.push(this);
+  Menu.push(this);
 }
 
 let categoriesMenu = ["Entree", "Combo", "Sides", "Extra"];
@@ -104,18 +104,23 @@ new MenuItem(
   "Extra"
 );
 
-function getMenuItemsByCategory(Menu, category) {
-  let x = Menu.filter((menuItem) => (menuItem.category = category));
-  return x;
+function getMenuItemsByCategory(category) {
+  let filteredMenu = Menu.filter(function (menuItem) {
+    return menuItem.category == category;
+  });
+  return filteredMenu;
 }
+// let categoryMenu = getMenuItemsByCategory("Combo");
 
-let filteredMenu = getMenuItemsByCategory(menu, "Combo");
+// alert(theList.length);
 
-function renderMenuItem(filteredMenu) {
-  let table = document.getElementById("ComboMenuItem");
-  alert(table);
+function renderMenuItem(theList, tableToUpDate) {
+  let table = document.getElementById(tableToUpDate);
+
+  //   let entreeList = getMenuItemsByCategory.s
+
   //loop through and append child
-  for (menuItem in filteredMenu) {
+  for (menuItem of theList) {
     // Create an empty <tr> element and add it to the 1st position of the table:
     let row = table.insertRow();
     // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
@@ -132,10 +137,14 @@ function renderMenuItem(filteredMenu) {
   }
 }
 
-renderMenuItem(filteredMenu);
-// //  <tr>
-// {/* <td>1</td>
-// <td>Combo Name 1</td>
-// <td>Description of Combo one "Cheese"</td>
-// <td>9.99</td>
-// // </tr> */}
+let categoryMenu = getMenuItemsByCategory("Combo");
+renderMenuItem(categoryMenu, "ComboMenuItem");
+
+categoryMenu = getMenuItemsByCategory("Entree");
+renderMenuItem(categoryMenu, "EntreeMenuItem");
+
+categoryMenu = getMenuItemsByCategory("Sides");
+renderMenuItem(categoryMenu, "SideMenuItem");
+
+categoryMenu = getMenuItemsByCategory("Extras");
+renderMenuItem(categoryMenu, "ExtrasMenuItem");
