@@ -6,6 +6,7 @@ function MenuItem(id, name, price, description, category) {
   this.price = price;
   this.description = description;
   this.category = category;
+  this.quantity = 0;
   Menu.push(this);
 }
 
@@ -118,12 +119,22 @@ function renderMenuItem(theList, tableToUpDate) {
     let cell2 = row.insertCell(1);
     let cell3 = row.insertCell(2);
     let cell4 = row.insertCell(3);
+    let cell5 = row.insertCell(4);
 
     // Add some text to the new cells:
     cell1.innerHTML = menuItem.id;
     cell2.innerHTML = menuItem.name;
     cell3.innerHTML = menuItem.description;
     cell4.innerHTML = menuItem.price;
+    // cell5.innerHTML = qty;
+    // Create an input element for Full Name
+    let qty = document.createElement("input");
+    qty.setAttribute("type", "number");
+    qty.setAttribute("id", "Item" + menuItem.id);
+    qty.setAttribute("name", "ItemQuantity");
+    qty.setAttribute("step", "1");
+
+    cell5.appendChild(qty);
   }
 }
 
@@ -139,5 +150,35 @@ renderMenuItem(categoryMenu, "SideMenuItem");
 categoryMenu = getMenuItemsByCategory("Extra");
 renderMenuItem(categoryMenu, "ExtraMenuItem");
 
+// when row is clicked get data from the row and find item id
+//which id have non 0 quantity
+//add to order
 
-// when row is clicked get data from the row and find item id  
+let ItemsOrdered = [];
+
+function ItemOrdered(id, quantity) {
+  this.id = id;
+  this.quantity = quantity;
+  ItemOrdered.push(this);
+}
+
+function getElementNotZero(category) {
+  let itemId = null;
+  let quantitySelected = 0;
+  let table = document.getElementById(category);
+  for (var r = 0, n = table.rows.length; r < n; r++) {
+    for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
+      // alert(table.rows[r].cells[c].innerHTML);
+      if (c == 0) {
+        itemId = table.rows[r].cells[c].innerHTML;
+        alert(itemId);
+      }
+      if (c == 4) {
+        alert(table.rows[r].cells[c].innerHTML.value);
+      }
+    }
+  }
+}
+
+getElementNotZero("ComboMenuItem");
+// alert(ItemsOrdered);
