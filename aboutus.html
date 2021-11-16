@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474E5D;
+  color: white;
+}
+.container {
+  padding: 0 16px;
+}
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.title {
+  color: grey;
+}
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+.button:hover {
+  background-color: #555;
+}
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+<div class="about-section">
+  <h1>We are Benjamin, Terrance, and Markus</h1>
+  <p>We are students at Pivot Tech School. Our goals for this front end cohort are to become proficient at front end web development and hopefully land a career using what we have learned about HTML, CSS, and JavaScript.</p>
+  <p>Our team project is centered around a burger restaurant. We have developed an app that will allow the restaurant to take on-line orders. Users of the app will be able to go to the app, view the menu, and place online or pickup orders. </p>
+</div>
+<h2 style="text-align:center">Meet our team members</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="" alt="Terrance" style="width:100%">
+      <div class="container">
+        <h2>Terrance Brown</h2>
+        <p class="title">Team member and Jr. Web Developer</p>
+        <p>Terrance is a jr. web developer who is a native of Houston, TX. His hobbies include reading, benge watching a good TV series, and researching various tech related topics.</p>
+        <p>boxman06@yahoo.com</p>
+        <p><button class="button">Contact</button></p>
+        </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="" alt="Benjamin" style="width:100%">
+      <div class="container">
+        <h2>Benjamin Johnson</h2>
+        <p class="title">Team member and Jr. Web Developer</p>
+        <p>Benjamin is a jr. web developer who is a native of Nashville, TN. His hobbies include, sports, fitness, and learning anything that will help him in the tech field. He is a family man with a wife, a son, a daughter and dog. </p>
+        <p>benjaminjohnson310@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="" alt="Markus" style="width:100%">
+      <div class="container">
+        <h2>Markus</h2>
+        <p class="title">Team member and Jr. Web Developer</p>
+        <p>Markus is a hard working family man from parts unknown. His hobbies include fishing, riding bikes and spending time with his family. </p>
+        <p>Markus@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
