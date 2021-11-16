@@ -138,3 +138,6 @@ renderMenuItem(categoryMenu, "SideMenuItem");
 
 categoryMenu = getMenuItemsByCategory("Extra");
 renderMenuItem(categoryMenu, "ExtraMenuItem");
+
+
+// when row is clicked get data from the row and find item id  
