@@ -128,14 +128,46 @@ function renderMenuItem(theList, tableToUpDate) {
     cell4.innerHTML = menuItem.price;
     // cell5.innerHTML = qty;
     // Create an input element for Full Name
-    let qty = document.createElement("input");
-    qty.setAttribute("type", "number");
-    qty.setAttribute("id", "Item" + menuItem.id);
-    qty.setAttribute("name", "ItemQuantity");
-    qty.setAttribute("step", "1");
+    let qty = document.createElement("div");
+    qty.id = "item" + menuItem.id;
+    qty.innerHTML = 0;
+    let addBtn = document.createElement("button");
+    let rmvBtn = document.createElement("button");
+    addBtn.innerHTML = "+";
+    rmvBtn.innerHTML = "-";
+    addBtn.id = "addBtn" + menuItem.id;
+    rmvBtn.id = "rmvBtn" + menuItem.id;
 
     cell5.appendChild(qty);
+    cell5.appendChild(addBtn);
+    cell5.appendChild(rmvBtn);
+
+    addBtn.addEventListener("click", addItemClickHandler);
+    rmvBtn.addEventListener("click", rmvItemClickHandler);
   }
+}
+
+function addItemClickHandler(event) {
+  let addBtnClickedId = event.target.id;
+  let itemId = addBtnClickedId.slice(6);
+  let item = "item" + itemId;
+
+  let itemAddedId = document.getElementById(item);
+  let quantity = itemAddedId.innerHTML;
+  alert(quantity.parseInt());
+  quantity = quantity.parseInt() + 1;
+  alert(quantity + "This is the quantity");
+  itemAddedId.innerHTML = quantity;
+  console.log(itemAddedId.innerHTML);
+}
+
+function rmvItemClickHandler(event) {
+  let rmvBtnClickedId = event.target.id;
+  let itemId = rmvBtnClickedId.slice(6);
+  let item = "item" + itemId;
+
+  let itemrmvId = document.getElementById(item);
+  console.log(itemrmvId.innerHTML);
 }
 
 let categoryMenu = getMenuItemsByCategory("Combo");
@@ -168,13 +200,11 @@ function getElementNotZero(category) {
   let table = document.getElementById(category);
   for (var r = 0, n = table.rows.length; r < n; r++) {
     for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
-      // alert(table.rows[r].cells[c].innerHTML);
       if (c == 0) {
         itemId = table.rows[r].cells[c].innerHTML;
-        alert(itemId);
       }
       if (c == 4) {
-        alert(table.rows[r].cells[c].innerHTML.value);
+        itemId = table.rows[r].cells[c].innerHTML;
       }
     }
   }
