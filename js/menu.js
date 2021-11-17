@@ -29,15 +29,17 @@ new MenuItem(
 );
 new MenuItem(
   3,
-  "Grilled or fried Chicken Sandwich with large side and Fountain Drink",
+  "The Which ChickaWhich Spot",
   11.99,
-  "This description for combo 3",
+  "Grilled or fried Chicken Sandwich with large side and Fountain Drink",
   "Combo"
 );
 new MenuItem(
   4,
+  "Super catch Wildcatch ",
   11.99,
-  "Fried or grilled chicken sandwich with drink and side Large "
+  "Wild Caught Alaskan tippet filet With with super wild fries and Drink ",
+  "Combo"
 );
 
 new MenuItem(5, "Entree Number 1", 6.99, "DoubleMan", "Entree");
@@ -105,8 +107,8 @@ function getMenuItemsByCategory(category) {
 
 // alert(theList.length);
 
-function renderMenuItem(theList, tableToUpDate) {
-  let table = document.getElementById(tableToUpDate);
+function renderMenuItem(theList, tableToUpdate) {
+  let table = document.getElementById(tableToUpdate);
 
   //   let entreeList = getMenuItemsByCategory.s
 
@@ -154,11 +156,10 @@ function addItemClickHandler(event) {
 
   let itemAddedId = document.getElementById(item);
   let quantity = itemAddedId.innerHTML;
-  alert(quantity.parseInt());
-  quantity = quantity.parseInt() + 1;
-  alert(quantity + "This is the quantity");
+
+  quantity = parseInt(quantity) + 1;
   itemAddedId.innerHTML = quantity;
-  console.log(itemAddedId.innerHTML);
+  event.preventDefault();
 }
 
 function rmvItemClickHandler(event) {
@@ -167,15 +168,21 @@ function rmvItemClickHandler(event) {
   let item = "item" + itemId;
 
   let itemrmvId = document.getElementById(item);
-  console.log(itemrmvId.innerHTML);
+  let quantity = itemrmvId.innerHTML;
+  if (parseInt(quantity) > 0) {
+    quantity = parseInt(quantity) - 1;
+    itemrmvId.innerHTML = quantity;
+  }
+
+  event.preventDefault();
 }
 
 let categoryMenu = getMenuItemsByCategory("Combo");
 renderMenuItem(categoryMenu, "ComboMenuItem");
-
+//
 categoryMenu = getMenuItemsByCategory("Entree");
 renderMenuItem(categoryMenu, "EntreeMenuItem");
-
+//
 categoryMenu = getMenuItemsByCategory("Sides");
 renderMenuItem(categoryMenu, "SideMenuItem");
 
@@ -208,6 +215,34 @@ function getElementNotZero(category) {
       }
     }
   }
+}
+
+let order;
+
+function createOrder(emailAddress, name){
+  
+  order = new Order(emailAddress, name);
+}
+function Order (emailAddress, name){
+
+  this.emailAddress = emailAddress,
+  this.name = name,
+  let orderItem = [],
+ let addItem = function (orderItem){
+
+  }
+}
+function OrderItem (itemId, quantityOrdered) {
+  this.itemId = itemId,
+  this.quantityOrdered = quantityOrdered,
+  
+} 
+
+function findOrderItems(){
+  //loop thourgh each submenu and find non zero items
+  //i.e. get by id find the alerady know  loop values to set 
+  //save it to local storage 
+
 }
 
 getElementNotZero("ComboMenuItem");
