@@ -195,11 +195,7 @@ renderMenuItem(categoryMenu, "ExtraMenuItem");
 
 let ItemsOrdered = [];
 
-function ItemOrdered(id, quantity) {
-  this.id = id;
-  this.quantity = quantity;
-  ItemOrdered.push(this);
-}
+
 
 function getElementNotZero(category) {
   let itemId = null;
@@ -223,19 +219,19 @@ function createOrder(emailAddress, name, ){
   
   order = new Order(emailAddress, name);
 }
-// function Order (emailAddress, name){
+ function Order (emailAddress, name){
 
-//   this.emailAddress = emailAddress,
-//   this.name = name,
-//   let orderItem = [],
-//  let addItem = function (orderItem){
-
-//   }
-// }
+   this.emailAddress = emailAddress,
+   this.name = name,
+   this.itemsOrdered,
+   this.setItemsOrdered = function (itemsOrdered){
+      this.itemsOrdered=itemsOrdered;
+   }
+ }
 function OrderItem (itemId, quantityOrdered) {
   this.itemId = itemId,
-  this.quantityOrdered = quantityOrdered
-  
+  this.quantityOrdered = quantityOrdered,
+  ItemsOrdered.push(this)
 } 
 
 
