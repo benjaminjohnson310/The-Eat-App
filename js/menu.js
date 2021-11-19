@@ -195,6 +195,8 @@ renderMenuItem(categoryMenu, "ExtraMenuItem");
 
 let ItemsOrdered = [];
 
+
+
 function getElementNotZero(category) {
   let itemId = null;
   let quantitySelected = 0;
@@ -227,6 +229,21 @@ function OrderItem(itemId, quantityOrdered) {
     (this.quantityOrdered = quantityOrdered),
     ItemsOrdered.push(this);
 }
+ function Order (emailAddress, name){
+
+   this.emailAddress = emailAddress,
+   this.name = name,
+   this.itemsOrdered,
+   this.setItemsOrdered = function (itemsOrdered){
+      this.itemsOrdered=itemsOrdered;
+   }
+ }
+function OrderItem (itemId, quantityOrdered) {
+  this.itemId = itemId,
+  this.quantityOrdered = quantityOrdered,
+  ItemsOrdered.push(this)
+} 
+
 
 /* can grab the item added when added when odered
 name them empty array car then loop through it 
