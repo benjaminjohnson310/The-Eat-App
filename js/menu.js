@@ -219,28 +219,40 @@ function getElementNotZero(category) {
 
 let order;
 
-function createOrder(emailAddress, name){
+function createOrder(emailAddress, name, ){
   
   order = new Order(emailAddress, name);
 }
-function Order (emailAddress, name){
+// function Order (emailAddress, name){
 
-  this.emailAddress = emailAddress,
-  this.name = name,
-  let orderItem = [],
- let addItem = function (orderItem){
+//   this.emailAddress = emailAddress,
+//   this.name = name,
+//   let orderItem = [],
+//  let addItem = function (orderItem){
 
-  }
-}
+//   }
+// }
 function OrderItem (itemId, quantityOrdered) {
   this.itemId = itemId,
-  this.quantityOrdered = quantityOrdered,
+  this.quantityOrdered = quantityOrdered
   
 } 
 
-function findOrderItems(){
-  //loop thourgh each submenu and find non zero items
-  //i.e. get by id find the alerady know  loop values to set 
+
+/* can grab the item added when added when odered
+name them empty array car then loop through it 
+if check when plus button use find method grab method
+on friday Mr Kev 
+//prototype add order 
+*/
+
+function findItemsOrdered(){
+  let order1 = new Order(name, itemId, quantityOrdered)
+
+  
+  //new order item then loop through it 
+  //loop through each submenu and find non zero items
+  //i.e. get by id find the alerady know and quantity then create  new order  loop values to set 
   //save it to local storage 
 
 }
