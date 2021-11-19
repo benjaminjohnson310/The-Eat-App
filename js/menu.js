@@ -195,12 +195,6 @@ renderMenuItem(categoryMenu, "ExtraMenuItem");
 
 let ItemsOrdered = [];
 
-function ItemOrdered(id, quantity) {
-  this.id = id;
-  this.quantity = quantity;
-  ItemOrdered.push(this);
-}
-
 function getElementNotZero(category) {
   let itemId = null;
   let quantitySelected = 0;
@@ -219,43 +213,39 @@ function getElementNotZero(category) {
 
 let order;
 
-function createOrder(emailAddress, name, ){
-  
-  order = new Order(emailAddress, name);
+function createOrder(emailAddress, name) {
+  order = new OrderItem(id, Quantity);
 }
-// function Order (emailAddress, name){
-
-//   this.emailAddress = emailAddress,
-//   this.name = name,
-//   let orderItem = [],
-//  let addItem = function (orderItem){
-
-//   }
-// }
-function OrderItem (itemId, quantityOrdered) {
-  this.itemId = itemId,
-  this.quantityOrdered = quantityOrdered
-  
-} 
-
+function Order(emailAddress, name) {
+  (this.emailAddress = emailAddress),
+    (this.name = name),
+    this.itemsOrdered,
+    (this.setItemsOrdered = function (ItemsOrdered) {});
+}
+function OrderItem(itemId, quantityOrdered) {
+  (this.itemId = itemId),
+    (this.quantityOrdered = quantityOrdered),
+    ItemsOrdered.push(this);
+}
 
 /* can grab the item added when added when odered
 name them empty array car then loop through it 
-if check when plus button use find method grab method
-on friday Mr Kev 
+if check when plus butt
 //prototype add order 
 */
 
-function findItemsOrdered(){
-  let order1 = new Order(name, itemId, quantityOrdered)
+function findItemsOrdered() {
+  let order1 = new OrderItem(2, 4);
 
-  
-  //new order item then loop through it 
+  for (let i = 0; i < OrderItem.length; i++) {   
+    console.log(order1);
+  }
+
+  //new order item then loop through it
   //loop through each submenu and find non zero items
-  //i.e. get by id find the alerady know and quantity then create  new order  loop values to set 
-  //save it to local storage 
-
+  //i.e. get by id find the already know and quantity then create  new order  loop values to set
+  //save it to local storage
 }
-
+findItemsOrdered();
 getElementNotZero("ComboMenuItem");
 // alert(ItemsOrdered);
