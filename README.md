@@ -29,4 +29,7 @@
 
 - Sure to also create and amend / update contract for user agreement between all accountable parties. I.e. workloads, completions of assigned tasks, checklist to ensure objectives met.
   
-- Contract was added so later there will be and amended section with all active members acknowledgement of receipt of contract.
+- Contract was added so later there will be and amended section with all active members acknowledgement of 
+receipt of contract. 
+
+Made updates. Used local storage to save orders by email address and customer name. Attached this funcion to the create order button
