@@ -12,18 +12,18 @@
 
 - Defines originality of group participation/ job assignment / team-building, exploratory/growth mindset
   ii. Assigning different roles but still each having the opportunity tpo suggest and attempt to solve toward possible stretch goal i.e. Adding addition varieties to existing sub menu items...
-  
+
   -Allowing each teammate to equally driver/ navigate to ease tension/ change roles
 
 ### Create Store pass in add delete as parameters i.e. .name
 
 ** i. - [x] Pseudocode process of adding creating items, updating a list etc..
 
-- [ ] instantiate items and dynamically iterate/ append cards rendered to the html.
+- [x] instantiate items and dynamically iterate/ append cards rendered to the html.
 
-- [ ]  Lastly, Code in steps until upon click request from local storage with with array behavior/properties
+- [x]  Lastly, Code in steps until upon click request from local storage with with array behavior/properties 
 
-#### Play with Local Storage show some designs on cards / strtch Goal utilize Proto and extends functions of parent class 
+#### Play with Local Storage show some designs on cards / stretch Goal utilize -Proto- and extends functions of parent class 
 
 - Using extends allows for more implementation of advanced yet simple coding concepts 
 

@@ -190,8 +190,6 @@ categoryMenu = getMenuItemsByCategory("Extra");
 renderMenuItem(categoryMenu, "ExtraMenuItem");
 
 // when row is clicked get data from the row and find item id
-//which id have non 0 quantity
-//add to order
 
 let ItemsOrdered = [];
 function createOrderHandler(event) {
@@ -241,6 +239,7 @@ function createOrder(emailAddress, name) {
   order = new Order(emailAddress, name);
 }
 
+//Prototype for creating local storage object
 function Order(emailAddress, name) {
   this.emailAddress = emailAddress;
   this.name = name;
@@ -254,24 +253,3 @@ function OrderItem(itemId, quantityOrdered) {
   this.quantityOrdered = quantityOrdered;
   ItemsOrdered.push(this);
 }
-
-/* empty store menu orders plural/ use get orders from local storage/ do logic check if order is empty/create add to local storage 
-add order ids plural to local storage/ constructor...store order, do i have email addr/name store by email if chk if oder created 
-//prototype add order 
-*/
-
-function findItemsOrdered() {
-  createOrder("guys@example.com", " Braxsmon");
-
-  for (let i = 0; i < Order.length; i++) {
-    console.log();
-  }
-
-  //new order item then loop through it
-  //loop through each sub menu and find non zero items
-  //i.e. get by id find the already know and quantity then create  new order  loop values to set
-  //save it to local storage
-}
-// findItemsOrdered();
-
-// alert(ItemsOrdered);
