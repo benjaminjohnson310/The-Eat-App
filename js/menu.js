@@ -206,6 +206,8 @@ function createOrderHandler(event) {
 
   order.setItemsOrdered(ItemsOrdered);
   console.log(order);
+  window.localStorage.setItem(email, JSON.stringify(order));
+  console.log(window.localStorage);
   event.preventDefault();
 }
 document
@@ -252,7 +254,6 @@ function OrderItem(itemId, quantityOrdered) {
   this.quantityOrdered = quantityOrdered;
   ItemsOrdered.push(this);
 }
-
 
 /* empty store menu orders plural/ use get orders from local storage/ do logic check if order is empty/create add to local storage 
 add order ids plural to local storage/ constructor...store order, do i have email addr/name store by email if chk if oder created 
