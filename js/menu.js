@@ -194,20 +194,40 @@ renderMenuItem(categoryMenu, "ExtraMenuItem");
 //add to order
 
 let ItemsOrdered = [];
+function createOrderHandler(event) {
+  let email = prompt("Please Enter Email Address", "Email Address here");
+  let name = prompt("Please Enter Your First and Last Name", "Enter Name Here");
+  createOrder(email, name);
+  getElementNotZero("ComboMenuItem");
+  getElementNotZero("EntreeMenuItem");
+  getElementNotZero("SideMenuItem");
+  getElementNotZero("ExtraMenuItem");
+  console.log(ItemsOrdered);
 
+  order.setItemsOrdered(ItemsOrdered);
+  console.log(order);
+  event.preventDefault();
+}
+document
+  .getElementById("createOrderBtn")
+  .addEventListener("click", createOrderHandler);
 
-
-function getElementNotZero(category) {
+function getElementNotZero(categoryMenu) {
   let itemId = null;
   let quantitySelected = 0;
-  let table = document.getElementById(category);
-  for (var r = 0, n = table.rows.length; r < n; r++) {
-    for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
+  let table = document.getElementById(categoryMenu);
+  for (let r = 1, n = table.rows.length; r < n; r++) {
+    for (let c = 0, m = table.rows[r].cells.length; c < m; c++) {
       if (c == 0) {
         itemId = table.rows[r].cells[c].innerHTML;
       }
       if (c == 4) {
-        itemId = table.rows[r].cells[c].innerHTML;
+        let item = "item" + itemId;
+        let itemAddedId = document.getElementById(item);
+        let quantitySelected = itemAddedId.innerHTML;
+        if (parseInt(quantitySelected) !== 0) {
+          new OrderItem(itemId, quantitySelected);
+        }
       }
     }
   }
@@ -216,53 +236,41 @@ function getElementNotZero(category) {
 let order;
 
 function createOrder(emailAddress, name) {
-  order = new OrderItem(id, Quantity);
+  order = new Order(emailAddress, name);
 }
+
 function Order(emailAddress, name) {
-  (this.emailAddress = emailAddress),
-    (this.name = name),
-    this.itemsOrdered,
-    (this.setItemsOrdered = function (ItemsOrdered) {});
+  this.emailAddress = emailAddress;
+  this.name = name;
+  this.itemsOrdered;
+  this.setItemsOrdered = function (itemsOrdered) {
+    this.itemsOrdered = itemsOrdered;
+  };
 }
 function OrderItem(itemId, quantityOrdered) {
-  (this.itemId = itemId),
-    (this.quantityOrdered = quantityOrdered),
-    ItemsOrdered.push(this);
+  this.itemId = itemId;
+  this.quantityOrdered = quantityOrdered;
+  ItemsOrdered.push(this);
 }
- function Order (emailAddress, name){
-
-   this.emailAddress = emailAddress,
-   this.name = name,
-   this.itemsOrdered,
-   this.setItemsOrdered = function (itemsOrdered){
-      this.itemsOrdered=itemsOrdered;
-   }
- }
-function OrderItem (itemId, quantityOrdered) {
-  this.itemId = itemId,
-  this.quantityOrdered = quantityOrdered,
-  ItemsOrdered.push(this)
-} 
 
 
-/* can grab the item added when added when odered
-name them empty array car then loop through it 
-if check when plus butt
+/* empty store menu orders plural/ use get orders from local storage/ do logic check if order is empty/create add to local storage 
+add order ids plural to local storage/ constructor...store order, do i have email addr/name store by email if chk if oder created 
 //prototype add order 
 */
 
 function findItemsOrdered() {
-  let order1 = new OrderItem(2, 4);
+  createOrder("guys@example.com", " Braxsmon");
 
-  for (let i = 0; i < OrderItem.length; i++) {   
-    console.log(order1);
+  for (let i = 0; i < Order.length; i++) {
+    console.log();
   }
 
   //new order item then loop through it
-  //loop through each submenu and find non zero items
+  //loop through each sub menu and find non zero items
   //i.e. get by id find the already know and quantity then create  new order  loop values to set
   //save it to local storage
 }
-findItemsOrdered();
-getElementNotZero("ComboMenuItem");
+// findItemsOrdered();
+
 // alert(ItemsOrdered);
