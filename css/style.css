@@ -131,4 +131,17 @@ html {
     float: none;
     display: block;
   }
+  
+}
+@font-face {
+  font-family: 'Praise';
+  src: URL('./fonts/Praise-Regular.ttf') format('truetype');
+}
+.logo {
+  text-align: center;
+  color:black;
+  font-family: Praise;
+  font-size: 40px;
+  background-color: orange;
+
 }
